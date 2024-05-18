@@ -10,8 +10,12 @@ import {Nonces} from "@openzeppelin/contracts/utils/Nonces.sol";
 contract DtToken is ERC20, ERC20Permit, ERC20Votes {
     constructor() ERC20("dtToken", "DTK") ERC20Permit("dtToken") {}
 
-    // The following functions are overrides required by Solidity.
+    
+    function mint(address to, uint256 amount) public {
+        _mint(to, amount);
+    }
 
+    // The following functions are overrides required by Solidity.
     function _update(address from, address to, uint256 value)
         internal
         override(ERC20, ERC20Votes)

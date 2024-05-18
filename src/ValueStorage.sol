@@ -22,7 +22,7 @@ contract ValueStorage is Ownable {
     emit NumberChanged(_number);
   }
   
-  function getNumber() public view returns (uint256) {
+  function getValue() public view returns (uint256) {
     return s_number;
   }
 
